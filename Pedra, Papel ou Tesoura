@@ -1,0 +1,47 @@
+from pickle import TRUE
+import random
+
+user_wins=0
+pc_wins=0
+
+options=["pedra","papel","tesoura"] #array com opcoes 
+
+while True:
+    user_input=input("Pedra,papel,tesoura? ").lower()
+    if (user_input=='q') :
+        print("Você ganhou " + str(user_wins) +" vezes")
+        print("O computador ganhou " + str(pc_wins) +" vezes")
+        quit()  
+
+    if user_input not in options: #se a opcao nao for igual a nenhuma do array
+        print("Opcao invalida")
+     
+        continue
+      
+    randomNumber= random.randint(0,2)    
+    pc_input=options[randomNumber]#vai escolher uma posicao do array
+    print("Computador escolheu:", pc_input)
+
+    if (user_input=='pedra' and pc_input=="tesoura"):
+         print("Você ganhou")
+         user_wins +=1
+         
+
+    elif (user_input=='papel' and pc_input=="pedra"):
+         print("Você ganhou")
+         user_wins +=1
+         
+
+    elif (user_input=='tesoura' and pc_input=="papel"):
+         print("Você ganhou")
+         user_wins +=1
+
+    elif (user_input==pc_input):
+        print("Empate") 
+        
+    else: 
+        print("Você perdeu")
+        pc_wins+=1
+
+
+    
