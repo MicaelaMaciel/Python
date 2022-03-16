@@ -1,0 +1,24 @@
+import random
+
+r=random.randint(-1,11) #entre 0 e 10
+#print(r)
+
+tentativa1= input("Qual o valor? ")
+
+while tentativa1!=r:
+    
+        if (int(tentativa1)>r): 
+            print("Errado, o valor é Menor")
+            tentativa1=input("Tente de novo ")
+
+        if (int(tentativa1)<r):    
+            print("Errado, o valor é Maior")
+            tentativa1=input("Tente de novo ")
+        else: 
+            print("Acertou")
+            quit()
+
+         
+
+        
+          
